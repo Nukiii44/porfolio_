@@ -1457,43 +1457,474 @@
       .nav-links { display: grid; gap: 7px; text-align: right; }
       .nav-links a { margin-left: 0; font-size: 10px; letter-spacing: 1px; }
     }
+    .nav {
+      height: 67px;
+      background: var(--white);
+      border-radius: 25px 25px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.2vw;
+      position: sticky;
+      top: 0;
+      left: auto;
+      transform: none;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      color: var(--burgundy);
+      pointer-events: auto;
+    }
+
+    .nav .brand {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .nav .brand span {
+      color: #8baec0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      margin-left: 0;
+      opacity: .7;
+      color: #473533;
+      font: 600 11px "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:nth-child(-n + 3) {
+      opacity: 1;
+      color: #473533;
+      font-weight: 600;
+    }
+
+    .nav-links a:last-child {
+      opacity: 1;
+      font-size: 10px;
+      border-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    .site {
+      width: 100%;
+      max-width: none;
+      border-radius: 0;
+    }
+
+    .source-home {
+      min-height: calc(100vh - 77px);
+      isolation: isolate;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      padding: clamp(30px, 5vw, 72px);
+      background: linear-gradient(135deg, #fff 0 52%, #fffaf0 52%);
+      border-bottom: 0;
+    }
+
+    .source-hero-meta,
+    .source-hero-footer {
+      display: flex;
+      justify-content: space-between;
+      font: 10px "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: .08em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .source-hero-meta {
+      position: absolute;
+      z-index: 5;
+      top: clamp(28px, 4vw, 48px);
+      left: clamp(30px, 5vw, 72px);
+    }
+
+    .source-hero-tags {
+      position: absolute;
+      z-index: 5;
+      right: clamp(30px, 5vw, 72px);
+      bottom: clamp(30px, 5vw, 72px);
+      font: 10px "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: .08em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .source-portrait-year {
+      display: none;
+    }
+
+    .source-home h1 {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(85px, 17.7vw, 285px);
+      line-height: .72;
+      letter-spacing: -.1em;
+      margin: 15vh 0 0;
+      font-weight: 600;
+      color: var(--burgundy);
+      text-transform: uppercase;
+      white-space: normal;
+    }
+
+    .source-home h1 em {
+      display: inline-block;
+      font-style: normal;
+      margin-left: 12vw;
+      color: #8baec0;
+    }
+
+    .source-hero-kicker {
+      position: absolute;
+      z-index: 3;
+      right: 6vw;
+      top: 35%;
+      margin: 0;
+      font-size: clamp(12px, 1.3vw, 18px);
+      line-height: 1.6;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    .source-hero-footer {
+      position: absolute;
+      left: clamp(30px, 5vw, 72px);
+      right: clamp(30px, 5vw, 72px);
+      bottom: 4.5vw;
+      align-items: center;
+      z-index: 4;
+    }
+
+    .source-round-button {
+      border: 1px solid var(--ink);
+      background: var(--buttermilk);
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      text-align: center;
+      font: 700 11px "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      cursor: pointer;
+      transition: .3s;
+      position: relative;
+      z-index: 4;
+    }
+
+    .source-round-button:hover {
+      transform: rotate(-8deg) scale(1.05);
+      background: var(--blue);
+    }
+
+    .source-round-button b {
+      display: block;
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+    .source-hero-composition {
+      position: absolute;
+      top: 8%;
+      left: 22%;
+      width: 55%;
+      height: 76%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .source-form {
+      position: absolute;
+      box-shadow: 15px 22px 25px rgba(67, 48, 46, .12);
+    }
+
+    .source-arch {
+      width: 35%;
+      height: 42%;
+      left: 15%;
+      top: 7%;
+      border: clamp(20px, 4vw, 55px) solid var(--buttermilk);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-24deg);
+    }
+
+    .source-orb {
+      width: 28%;
+      aspect-ratio: 1;
+      left: 41%;
+      top: 28%;
+      background: radial-gradient(circle at 33% 25%, #f8ffff, #8baec0 35%, #43302e);
+      border-radius: 50%;
+    }
+
+    .source-cube {
+      width: 23%;
+      aspect-ratio: 1;
+      left: 39%;
+      top: -2%;
+      background: var(--blue);
+      border-radius: 31% 45% 35% 25%;
+      transform: rotate(24deg);
+    }
+
+    .source-tube {
+      width: 13%;
+      height: 52%;
+      background: linear-gradient(90deg, #fff6cc, #b48b75);
+      right: 22%;
+      top: 24%;
+      border-radius: 100px;
+      transform: rotate(-39deg);
+    }
+
+    .source-chrome {
+      width: 22%;
+      aspect-ratio: 1;
+      right: 12%;
+      top: 0;
+      background: radial-gradient(circle at 35% 28%, #fff, #fff1b5 17%, #c1dbe8 42%, #8baec0 65%, #fff);
+      border-radius: 40%;
+    }
+
+    .source-grid {
+      width: 44%;
+      height: 39%;
+      left: 26%;
+      bottom: 7%;
+      border: 1px solid rgba(67, 48, 46, .33);
+      transform: rotate(1deg);
+      box-shadow: none;
+    }
+
+    .source-line {
+      position: absolute;
+      border: 1px solid #43302e;
+      width: 80%;
+      height: 49%;
+      border-radius: 50%;
+      transform: rotate(29deg);
+      top: 31%;
+      left: 7%;
+      box-shadow: none;
+    }
+
+    .source-line-two {
+      transform: rotate(-29deg);
+      border-color: #8baec0;
+      width: 50%;
+      left: 32%;
+      top: 19%;
+    }
+
+    @media (orientation: portrait) and (max-width: 920px) {
+      .source-home h1 {
+        margin-top: 314px;
+      }
+
+      .source-hero-composition {
+        top: 15%;
+      }
+
+      .source-grid {
+        left: 26%;
+        bottom: 7%;
+      }
+
+      .source-hero-footer {
+        padding-bottom: 34px;
+      }
+
+      .source-hero-tags {
+        right: clamp(30px, 5vw, 72px);
+        bottom: calc(clamp(30px, 5vw, 72px) + 42px);
+        line-height: 1.45;
+        white-space: nowrap;
+        transform: rotate(-90deg);
+        transform-origin: right bottom;
+      }
+
+      .source-portrait-year {
+        display: block;
+        position: absolute;
+        z-index: 5;
+        left: 12vw;
+        top: 170px;
+        color: #7b6360;
+        font: 200 42px "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        letter-spacing: .08em;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        height: auto;
+        min-height: 58px;
+        padding: 14px 17px;
+        border-radius: 17px 17px 0 0;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: left;
+        width: 100%;
+        order: 2;
+      }
+
+      .nav-links a,
+      .nav-links a:not(:last-child) {
+        display: inline-flex;
+        margin-left: 0;
+        font-size: 10px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+      }
+
+      .nav-links a:last-child {
+        position: absolute;
+        right: 17px;
+        top: 14px;
+      }
+
+      .nav .brand {
+        font-size: 8px;
+        letter-spacing: .12em;
+        padding-right: 95px;
+        margin-left: -2px;
+      }
+
+      .source-home {
+        padding: 25px 20px;
+        min-height: calc(100vh - 62px);
+      }
+
+      .source-home h1 {
+        margin-top: 314px;
+        font-size: 26vw;
+      }
+
+      .source-hero-composition {
+        left: 11%;
+        width: 80%;
+        top: 15%;
+        height: 60%;
+      }
+
+      .source-grid {
+        left: 26%;
+        bottom: 7%;
+      }
+
+      .source-hero-kicker {
+        top: 57%;
+        right: 20px;
+      }
+
+      .source-hero-footer {
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+        padding-bottom: 34px;
+      }
+
+      .source-round-button {
+        width: 93px;
+        height: 93px;
+      }
+
+      .source-hero-meta {
+        top: 18px;
+        left: 20px;
+        font-size: 8px;
+        gap: 18px;
+      }
+
+      .source-hero-tags {
+        left: 8%;
+        right: 20px;
+        bottom: 218px;
+        max-width: none;
+        font-size: 8px;
+        line-height: 1.45;
+        text-align: right;
+        white-space: nowrap;
+        transform: none;
+        transform-origin: center;
+      }
+
+      .source-portrait-year {
+        left: 13vw;
+        top: 165px;
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav {
+        padding: 14px 14px 12px;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .nav-links a,
+      .nav-links a:not(:last-child) {
+        font-size: 8px;
+        letter-spacing: .08em;
+      }
+
+      .nav-links a:last-child {
+        right: 14px;
+        top: 14px;
+        font-size: 7px;
+      }
+    }
   </style>
 </head>
 <body>
   <nav class="nav" aria-label="主导航">
-    <a class="brand" href="#home">WU · Studio</a>
+    <a class="brand" href="#home">WU<span>·</span> STUDIO</a>
     <div class="nav-links">
-      <a href="#home">首页 / Homepage</a>
-      <a href="#cv">个人信息 / CV</a>
-      <a href="#works">作品索引 / Index</a>
-      <a href="mailto:patriciawjy00@163.com">Contact me↗</a>
+      <a href="#home">01 首页 / HOMEPAGE</a>
+      <a href="#cv">02 个人信息 / CV</a>
+      <a href="#works">03 作品索引 / INDEX</a>
+      <a href="mailto:patriciawjy00@163.com">CONTACT ME ↗</a>
     </div>
   </nav>
 
   <main class="site" id="mainSite">
-    <section class="hero" id="home">
-      <div class="collage" aria-hidden="true">
-        <div class="frame f1"></div>
-        <div class="frame f2"></div>
-        <div class="frame f3"></div>
-        <div class="wire"></div>
-        <div class="shape ring"></div>
-        <div class="shape rock"></div>
-        <div class="shape green-cross"></div>
-        <div class="shape foil"></div>
-        <div class="shape sphere"></div>
-        <div class="shape tube"></div>
-        <div class="shape purple"></div>
+    <section class="hero source-home" id="home">
+      <div class="source-hero-meta"><span>PORTFOLIO / 2026</span></div>
+      <div class="source-hero-tags">ARCHITECTURE · SPATIAL DESIGN · AIGC ART · ACADEMIC RESEARCH</div>
+      <div class="source-portrait-year" aria-hidden="true">2026</div>
+      <div class="source-hero-composition" aria-hidden="true">
+        <div class="source-form source-arch"></div><div class="source-form source-orb"></div><div class="source-form source-cube"></div>
+        <div class="source-form source-tube"></div><div class="source-form source-chrome"></div><div class="source-form source-grid"></div>
+        <div class="source-line source-line-one"></div><div class="source-line source-line-two"></div>
       </div>
-      <div class="year">2026</div>
-      <h1 class="hero-title">Portfolio</h1>
-      <div class="hero-meta">
-        <span>Jiayi WU</span>
-        <span>Architecture<br>Spatial Design<br>AIGC Art</span>
-      </div>
-      <div class="hero-actions">
-        <a class="browse-button" href="#works">浏览作品</a>
-      </div>
+      <p class="source-hero-kicker">跨尺度的空间叙事<br>与感官实验</p>
+      <h1>PORT<br><em>FOLIO</em></h1>
+      <div class="source-hero-footer"><span>个人作品集</span><a class="source-round-button" href="#works">探索作品 <b>↓</b></a><span>© 2026 WU's STUDIO</span></div>
     </section>
 
     <section class="cv" id="cv">
